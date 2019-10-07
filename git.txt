@@ -1,0 +1,180 @@
+
+
+
+Git Commit Recap
+
+The git commit command takes files from the Staging Index and saves them in the repository.
+
+$ git commit
+
+
+
+
+Git Add 
+
+The git add command is used to move files from the Working Directory to the Staging Index.
+
+$ git add <file1> <file2> … <fileN>
+
+This command:
+
+    takes a space-separated list of file names
+    alternatively, the period . can be used in place of a list of files to tell Git to add the current directory (and all nested files)
+
+
+
+
+git diff
+
+The git diff command can be used to see changes that have been made but haven't been committed, yet.
+
+
+*gitignore-
+
+This is an example of what the .gitignore file could look like:
+
+# Ignore Mac system files
+.DS_store
+
+# Ignore node_modules folder
+node_modules
+
+# Ignore all text files
+*.txt
+
+# Ignore files related to API keys
+.env
+
+# Ignore SASS config files
+.sass-cache
+
+To add or change your global .gitignore file, run the following command:
+
+git config --global core.excludesfile ~/.gitignore_global
+
+Git Reset...
+
+Reset a file or set of files
+
+git reset (--patch | -p) [tree-ish] [--] [paths]
+
+
+
+Unstage a file
+
+git reset HEAD FILE-TO-UNSTAGE
+
+Git Branch Recap
+
+To recap, the git branch command is used to manage branches in Git:
+
+# to list all branches
+$ git branch
+
+# to create a new "footer-fix" branch
+$ git branch footer-fix
+
+# to delete the "footer-fix" branch
+$ git branch -d footer-fix
+
+This command is used to:
+
+    list out local branches
+    create new branches
+    remove branches
+
+
+Git Log Recap
+
+Fantastic job! Do you feel your Git-power growing?
+
+Let's do a quick recap of the git log command. The git log command is used to display all of the commits of a repository.
+
+$ git log
+
+By default, this command displays:
+
+    the SHA
+    the author
+    the date
+    and the message
+
+
+git log --stat Recap
+
+To recap, the --stat flag is used to alter how git log displays information:
+
+$ git log --stat
+
+This command:
+
+    displays the file(s) that have been modified
+    displays the number of lines that have been added/removed
+    displays a summary line with the total number of modified files and lines that have been added/removed
+
+
+git log -p Recap
+
+To recap, the -p flag (which is the same as the --patch flag) is used to alter how git log displays information:
+
+$ git log -p
+
+This command adds the following to the default output:
+
+    displays the files that have been modified
+    displays the location of the lines that have been added/removed
+    displays the actual changes that have been made
+
+
+What does git show do?
+
+The git show command will show only one commit. So don't get alarmed when you can't find any other commits - it only shows one. The output of the git show command is exactly the same as the git log -p command. So by default, git show displays:
+
+    the commit
+    the author
+    the date
+    the commit message
+    the patch information
+
+Create A Branch
+
+To create a branch, all you have to do is use git branch and provide it the name of the branch you want it to create. So if you want a branch called "sidebar", you'd run this command:
+
+$ git branch sidebar
+
+
+
+The git checkout Command
+
+Remember that when a commit is made that it will be added to the current branch. So even though we created the new sidebar, no new commits will be added to it since we haven't switched to it, yet. If we made a commit right now, that commit would be added to the master branch, not the sidebar branch. We've already seen this in the demo, but to switch between branches, we need to use Git's checkout command.
+
+$ git checkout sidebar
+
+
+Revert Recap
+
+To recap, the git revert command is used to reverse a previously made commit:
+
+$ git revert <SHA-of-commit-to-revert>
+
+This command:
+
+    will undo the changes that were made by the provided commit
+    creates a new commit to record the change
+
+Git Cherry Pick
+
+The git cherry-pick command applies the changes introduced by some existing commits. This guide will be focusing on explaining this feature as much as possible but of course the real Git documentation will always come in handy.
+
+git merge --ff-only
+
+git merge --ff-only will abort if it cannot fast forward, and takes a commit (normally a branch) to merge in. It will only create a merge commit if it can't fast forward (i.e. will never do so with --ff-only 
+
+
+
+
+
+
+
+
+
