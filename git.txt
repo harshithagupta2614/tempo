@@ -1,4 +1,4 @@
-
+This text file explains how commit works in git
 
 
 Git Commit Recap
