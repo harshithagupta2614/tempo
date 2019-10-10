@@ -1,4 +1,4 @@
-This text file explains how commit works in git
+﻿This text file explains how commit works in git
 
 
 Git Commit Recap
@@ -64,7 +64,7 @@ Unstage a file
 
 git reset HEAD FILE-TO-UNSTAGE
 
-Git Branch Recap
+Git Branch
 
 To recap, the git branch command is used to manage branches in Git:
 
